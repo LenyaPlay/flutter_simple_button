@@ -23,7 +23,7 @@ class _SimpleButtonState extends State<SimpleButton> {
 
   @override
   Widget build(BuildContext context) {
-    if (endAnimation && opacity != futureOpacity) {
+    if (endAnimation && opacity != futureOpacity || opacity > futureOpacity) {
       opacity = futureOpacity;
       endAnimation = false;
     }
@@ -41,6 +41,10 @@ class _SimpleButtonState extends State<SimpleButton> {
           setState(() {});
         },
         onTapUp: (details) {
+          futureOpacity = 1;
+          setState(() {});
+        },
+        onTapCancel: () {
           futureOpacity = 1;
           setState(() {});
         },
