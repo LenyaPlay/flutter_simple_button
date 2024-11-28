@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
-class RomeoButton extends StatefulWidget {
+class SimpleButton extends StatefulWidget {
   final Widget child;
-  final HitTestBehavior behavior;
+  final HitTestBehavior? behavior;
   final VoidCallback? onTap;
 
-  const RomeoButton({
+  const SimpleButton({
     super.key,
-    required this.behavior,
     required this.child,
+    this.behavior,
     this.onTap,
   });
 
   @override
-  State<RomeoButton> createState() => _RomeoButtonState();
+  State<SimpleButton> createState() => _SimpleButtonState();
 }
 
-class _RomeoButtonState extends State<RomeoButton> {
+class _SimpleButtonState extends State<SimpleButton> {
   bool endAnimation = true;
   var opacity = 1.0;
   var futureOpacity = 1.0;
